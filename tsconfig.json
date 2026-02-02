@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "rootDir": "./generated",
+    "outDir": "./dist",
+    "module": "es2022",
+    "target": "esnext",
+    "types": [],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "noImplicitOverride": false
+  },
+  "exclude": [
+    "prisma.config.ts",
+    "dist/**/*"
+  ],
+  "include": [
+    "generated/**/*"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@atsuo-tech/w-auth-v2-prisma",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "rm -rf ./dist/prisma",
+    "generate": "npm run clean && npx prisma generate && npx tsc",
+    "prepublishOnly": "npm run generate"
+  },
+  "files": [
+    "dist/prisma"
+  ],
+  "main": "dist/prisma/client.js",
+  "types": "dist/prisma/client.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "repository": {
+    "url": "git+https://github.com/atsuo-tech/rootdb-prisma.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "dotenv": "^17.2.3",
+    "prisma": "^7.3.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.3.0"
+  }
+}

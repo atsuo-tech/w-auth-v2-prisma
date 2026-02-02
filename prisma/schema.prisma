@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model AuthUser {
+  uniqueId    String      @id @default(cuid())
+  userAuths   UserAuth[]
+}
+
+enum AuthType {
+  PASSWORD
+}
+
+model UserAuth {
+  uniqueId String
+  user     AuthUser @relation(fields: [uniqueId], references: [uniqueId])
+  authType AuthType
+  value    String
+
+  @@unique([uniqueId, authType])
+}
+
+enum SystemTokenType {
+  CREATE_ACCOUNT
+}
+
+model SystemToken {
+  id        String          @id @default(cuid())
+  tokenHash String          @unique
+  type      SystemTokenType
+  createdAt DateTime        @default(now())
+  expiresAt DateTime
+}
