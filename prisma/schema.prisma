@@ -8,8 +8,9 @@ datasource db {
 }
 
 model AuthUser {
-  uniqueId    String      @id @default(cuid())
-  userAuths   UserAuth[]
+  uniqueId      String         @id @default(cuid())
+  userAuths     UserAuth[]
+  loginSessions LoginSession[]
 }
 
 enum AuthType {
@@ -23,6 +24,15 @@ model UserAuth {
   value    String
 
   @@unique([uniqueId, authType])
+}
+
+model LoginSession {
+  id           String   @id @default(cuid())
+  userId       String
+  user         AuthUser @relation(fields: [userId], references: [uniqueId])
+  sessionToken String   @unique
+  createdAt    DateTime @default(now())
+  expiresAt    DateTime
 }
 
 enum SystemTokenType {
