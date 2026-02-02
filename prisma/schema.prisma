@@ -11,6 +11,11 @@ model AuthUser {
   uniqueId      String         @id @default(cuid())
   userAuths     UserAuth[]
   loginSessions LoginSession[]
+  username      String         @unique
+  realname      String
+  studentId     String         @unique
+  grade         Int
+  createdAt     DateTime       @default(now())
 }
 
 enum AuthType {
