@@ -1,6 +1,6 @@
 {
   "name": "@atsuo-tech/w-auth-v2-prisma",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "clean": "rm -rf ./dist/prisma",
     "generate": "npm run clean && npx prisma generate && npx tsc",
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "repository": {
-    "url": "git+https://github.com/atsuo-tech/rootdb-prisma.git"
+    "url": "git+https://github.com/atsuo-tech/w-auth-v2-prisma.git"
   },
   "keywords": [],
   "author": "",
